@@ -21,3 +21,40 @@ body {
 .acessibilidade a {
 	color: #17252a;
 }
+
+a.alto-contraste:before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f042";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+ }
+ 
+ .normal:before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f031";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+ }
+
+ .aumentar:before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f031\f067";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+ }
+
+ .diminuir:before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f031\f068";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+ }
+ 
