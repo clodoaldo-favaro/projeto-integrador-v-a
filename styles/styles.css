@@ -40,7 +40,7 @@ a.alto-contraste:before {
 	font-weight: 900;
  }
 
- .aumentar:before {
+ .diminuir:before {
 	font-family: "Font Awesome 5 Free";
 	content: "\f031\f067";
 	display: inline-block;
@@ -49,7 +49,7 @@ a.alto-contraste:before {
 	font-weight: 900;
  }
 
- .diminuir:before {
+ .aumentar:before {
 	font-family: "Font Awesome 5 Free";
 	content: "\f031\f068";
 	display: inline-block;
