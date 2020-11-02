@@ -17,3 +17,7 @@ body {
 #consulta-covid {
     font-size: 1.5rem;
 }
+
+.acessibilidade a {
+	color: #17252a;
+}
