@@ -1,3 +1,4 @@
 function gerarDadosEstaticos() {
-    alert('OK');
+    var nomeCidade = $('#consulta-cidade').val();
+    alert(nomeCidade);
 }
