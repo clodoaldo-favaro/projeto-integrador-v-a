@@ -57,4 +57,70 @@ a.alto-contraste:before {
 	vertical-align: middle;
 	font-weight: 900;
  }
+
+ .body-container {
+	 margin-top: 120px;
+ }
+
+
+ .flip-horizontal {
+	transform: scaleX(-1);
+ }
+
+ .cartoon-covid {
+	 height: 196px;
+	 width: 196px;
+ }
+
+ #consulta-cidade {
+	 background-color: #7AFDCA;
+	 color: #17252a;
+	 border: 2px solid #17252a;
+	 border-radius: 2px;
+	 width: 50%;
+	 height: 45px;
+ }
+
+ .button-container {
+	 margin-top: 20px;
+ }
+
+ .button-container button {
+	background-color: #00FFAA;
+	color: #17252a;
+	border: 2px solid #17252a;
+	border-radius: 2px;
+	height: 34px;
+	width: 130px;
+	font-weight: 600;
+	transition: 0.3s;
+ }
+
+ #botao-consulta:focus {
+	outline-width: 0;
+ }
+
+ #botao-consulta:hover {
+	background-color: #00FFEE;
+ }
+
+ .resultado-container {
+	 margin-top: 20px;
+ }
+
+ .resultado-container textarea {
+	background-color: #7AFDCA;
+	color: #17252a;
+	border: 2px solid #17252a;
+	border-radius: 2px;
+	resize: none;
+ }
+
+ .resultado-container textarea:read-only {
+	background-color: #7AFDCA;
+	color: #17252a;
+	border: 2px solid #17252a;
+	border-radius: 2px;
+ }
+ 
  
