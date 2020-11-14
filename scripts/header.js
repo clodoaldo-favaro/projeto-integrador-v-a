@@ -12,7 +12,7 @@ var header_content = `
             <a class="diminuir" href="#" accesskey="8" title="Aumentar fonte">Aumentar fonte [8]</a>
         </li>
         <li class="ialto-contraste list-group-item bg-transparent border-0">
-            <a class="alto-contraste" href="#" accesskey="9" title="Alto contraste">Alto contraste[9]</a>
+            <a class="alto-contraste" href="#" accesskey="9" title="Alto contraste" value="N" onclick=altoContraste()>Alto contraste[9]</a>
         </li>
     </ul>
 </div>

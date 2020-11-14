@@ -10,7 +10,7 @@ body {
 }
 
 .navegacao a {
-    color: #feffff;
+    color: #FEFFFF;
     font-size: 1.2rem;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .acessibilidade a {
-	color: #17252a;
+	color: #17252A;
 }
 
 a.alto-contraste:before {
@@ -74,8 +74,8 @@ a.alto-contraste:before {
 
  #consulta-cidade {
 	 background-color: #7AFDCA;
-	 color: #17252a;
-	 border: 2px solid #17252a;
+	 color: #17252A;
+	 border: 2px solid #17252A;
 	 border-radius: 2px;
 	 width: 50%;
 	 height: 45px;
@@ -87,8 +87,8 @@ a.alto-contraste:before {
 
  .button-container button {
 	background-color: #00FFAA;
-	color: #17252a;
-	border: 2px solid #17252a;
+	color: #17252A;
+	border: 2px solid #17252A;
 	border-radius: 2px;
 	height: 34px;
 	width: 130px;
@@ -111,16 +111,24 @@ a.alto-contraste:before {
  .resultado-container textarea {
 	background-color: #7AFDCA;
 	color: #17252a;
-	border: 2px solid #17252a;
+	border: 2px solid #17252A;
 	border-radius: 2px;
 	resize: none;
  }
 
  .resultado-container textarea:read-only {
 	background-color: #7AFDCA;
-	color: #17252a;
-	border: 2px solid #17252a;
+	color: #17252A;
+	border: 2px solid #17252A;
 	border-radius: 2px;
  }
+
+ .placeholderAltoContraste::-webkit-input-placeholder {
+	 color: rgba(255, 255, 255,0.8);
+ }
+
+ .placeholderNormal::-webkit-input-placeholder {
+	color: rgba(23, 37, 42, 0.5);
+}
  
  
