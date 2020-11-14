@@ -10,19 +10,17 @@ function altoContraste() {
         });
         $('#header').css('border', '2px solid white');
         $('.acessibilidade a').css('color', '#FFF');
-        $('#consulta-cidade').css({
-            'color': '#FFF',
-            'background-color': '#000',
-            'border': '2px solid #FFF'
-        });
+        
+        $('#consulta-cidade').removeClass('consultaCidade');
+        $('#consulta-cidade').addClass('altoContraste');
         $('#consulta-cidade').removeClass('placeholderNormal');
         $('#consulta-cidade').addClass('placeholderAltoContraste');
-        $('.button-container button').css({
-            'color': '#FFF',
-            'border-color': '#FFF',
-            'background-color': '#000'
-        });
         
+        $('#botao-consulta').removeClass('buttonPadrao');
+        $('#botao-consulta').addClass('altoContraste');
+
+        $('#resultado-consulta').removeClass('resultadoConsulta');
+        $('#resultado-consulta').addClass('altoContraste');
     } else {
         $('body').css('background-color', 'rgb(58, 175, 169)');
         $('.navegacao').css({
@@ -32,19 +30,17 @@ function altoContraste() {
         });
         $('#header').css('border', 'none');
         $('.acessibilidade a').css('color', '#17252A');
-        $('#consulta-cidade').css({
-            'background-color': '#7AFDCA',
-	        'color': '#17252A',
-	        'border': '2px solid #17252A'
-        });
+        
+        $('#consulta-cidade').removeClass('altoContraste');
+        $('#consulta-cidade').addClass('consultaCidade');
         $('#consulta-cidade').removeClass('placeholderAltoContraste');
         $('#consulta-cidade').addClass('placeholderNormal');
-        $('.button-container button').css({
-            'color': '#17252A',
-            'border-color': '#17252A',
-            'background-color': '#00FFAA'
-        });
         
+        $('#botao-consulta').removeClass('altoContraste');
+        $('#botao-consulta').addClass('buttonPadrao');
+
+        $('#resultado-consulta').removeClass('altoContraste');
+        $('#resultado-consulta').addClass('resultadoConsulta');
     }
     
 }
