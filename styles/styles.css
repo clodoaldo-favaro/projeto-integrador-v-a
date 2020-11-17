@@ -3,6 +3,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.formPadrao, .formPadrao:focus {
+	background-color: #7AFDCA;
+	color: #17252A;
+	border: 2px solid #17252A;
+}
+
 .navegacao {
     margin-top: 60px;
     background-color: #17252A;
@@ -72,15 +78,8 @@ a.alto-contraste:before {
 	width: 196px;
 }
 
-.consultaCidade {
-	background-color: #7AFDCA;
-	color: #17252A;
-	border: 2px solid #17252A;
-}
-
 
 #consulta-cidade {
-	border-radius: 2px;
 	width: 50%;
 	height: 45px;
 }
@@ -97,21 +96,19 @@ a.alto-contraste:before {
 	transition: 0.3s;
 }
 
-#botao-consulta:focus {
-	outline-width: 0;
-}
-
 .buttonPadrao {
 	background-color: #00FFAA;
-	color: #17252A;
-	border: 2px solid #17252A;
+}
+
+.buttonPadrao:focus {
+	outline-width: 0;
 }
 
 .buttonPadrao:hover {
 	background-color: #00FFEE;
 }
 
-.altoContraste {
+.altoContraste, .altoContraste:focus {
 	background-color: #000;
 	color: #FFF;
 	border: 2px solid #FFF;
@@ -125,15 +122,20 @@ button.altoContraste:hover {
 	margin-top: 20px;
 }
 
-.resultado-container textarea {
-	resize: none;
-}
-
-.resultadoConsulta:read-only {
+.resultadoConsulta {
 	background-color: #7AFDCA;
 	color: #17252A;
 	border: 2px solid #17252A;
 	border-radius: 2px;
+	height: 300px;
+}
+
+.centerText {
+	text-align: center;
+}
+
+.leftText {
+	text-align: left;
 }
 
 .altoContraste:read-only {
@@ -154,8 +156,26 @@ button.altoContraste:hover {
 	display: none;
 }
 
-.resultadoConsulta {
-	text-align: center;
+.container-contato {
+	width: 30%;
+
 }
+
+.container-contato-padrao {
+	color: #17252A;
+	border: 2px solid #17252A;
+	border-radius: 2px;
+}
+
+.nomeCidade {
+	font-size: 2rem;
+}
+
+.bandeira {
+	font-size: 1.5rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
  
  
