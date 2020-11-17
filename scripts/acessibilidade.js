@@ -1,3 +1,39 @@
+$(document).ready(function() {
+    var resize = new Array('p', '.resizable');
+    resize = resize.join(',');
+    debugger;
+    var resetFont = $(resize).css('font-size');
+    $(".normal").click(function() {
+        debugger;
+        $(resize).css('font-size', resetFont);
+    });
+  
+    $(".aumentar").click(function() {
+        debugger;
+        var originalFontSize = $(resize).css('font-size');
+        var originalFontNumber = parseFloat(originalFontSize, 10);
+        if (originalFontNumber < 20) {
+            var newFontSize = originalFontNumber * 1.2;
+            $(resize).css('font-size', newFontSize);
+        }
+        return false;
+    });
+  
+    
+    $(".diminuir").click(function() {
+        debugger;
+        var originalFontSize = $(resize).css('font-size');
+        var originalFontNumber = parseFloat(originalFontSize, 10);
+        if (originalFontNumber > 12) {
+            var newFontSize = originalFontNumber * 0.8;
+            $(resize).css('font-size', newFontSize);
+        }
+        return false;
+    });
+  
+  });
+
+
 function altoContraste() {
     var color = $('body').css('background-color');
     
@@ -48,6 +84,19 @@ function altoContraste() {
     
 }
 
+function fonteNormal() {
+    $('.acessibilidade a').css('font-size', '16px');
+}
+
 function diminuirFonte() {
-    
+    debugger;
+    var size =  parseInt($('.acessibilidade a').css('font-size'));
+    if (size >= 11) {
+        $('.acessibilidade a').css('font-size', size*0.9);
+    }
+}
+
+function aumentarFonte() {
+    var acessibilidadeFontSize =  parseInt($('acessibilidade a').css('font-size')); 
+    alert('Fonte: ' + acessibilidadeFontSize);
 }

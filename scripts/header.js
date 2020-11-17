@@ -1,15 +1,15 @@
 var header_content = `
-<div id="barra-auxiliar" class="container-fluid">
+<div id="barra-auxiliar" class="container-fluid fixed-top">
 <div class="d-flex justify-content-end acessibilidade">
     <ul class="list-group list-group-horizontal bg-transparent">
-        <li class="iaumentar list-group-item bg-transparent border-0">
-            <a class="aumentar" href="#" accesskey="6" title="Diminuir fonte" onclick=diminuirFonte()>Diminuir fonte [6]</a>
+        <li class="idiminuir list-group-item bg-transparent border-0">
+            <a class="diminuir" href="#" accesskey="6" title="Diminuir fonte">Diminuir fonte [6]</a>
         </li>
         <li class="inormal list-group-item bg-transparent border-0">
             <a class="normal" href="#" accesskey="7" title="Tamanho normal">Tamanho normal [7]</a>
         </li>
-        <li class="idiminuir list-group-item bg-transparent border-0">
-            <a class="diminuir" href="#" accesskey="8" title="Aumentar fonte">Aumentar fonte [8]</a>
+        <li class="iaumentar list-group-item bg-transparent border-0">
+            <a class="aumentar" href="#" accesskey="8" title="Aumentar fonte">Aumentar fonte [8]</a>
         </li>
         <li class="ialto-contraste list-group-item bg-transparent border-0">
             <a class="alto-contraste" href="#" accesskey="9" title="Alto contraste" onclick=altoContraste()>Alto contraste[9]</a>
@@ -19,11 +19,11 @@ var header_content = `
 
 </div>
 <nav class="navbar navbar-expand-md fixed-top navegacao">
-<a class="navbar-brand" id="consulta-covid" href="#">CONSULTA COVID-19</a>
+<a class="navbar-brand resizable" id="consulta-covid" href="#">CONSULTA COVID-19</a>
 <div class="d-flex ml-auto">
-    <div class="p-2"><a href="index.html">INICIO</a></div>
-    <div class="p-2"><a href="sobre.html">SOBRE</a></div>
-    <div class="p-2"><a href="contato.html">CONTATO</a></div>
+    <div class="p-2"><a class="resizable" href="index.html">INICIO</a></div>
+    <div class="p-2"><a class="resizable" href="sobre.html">SOBRE</a></div>
+    <div class="p-2"><a class="resizable" href="contato.html">CONTATO</a></div>
 </div>
 </nav>`; 
 

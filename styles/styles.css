@@ -48,7 +48,7 @@ a.alto-contraste:before {
 
 .diminuir:before {
 	font-family: "Font Awesome 5 Free";
-	content: "\f031\f067";
+	content: "\f031\f068";
 	display: inline-block;
 	padding-right: 3px;
 	vertical-align: middle;
@@ -57,7 +57,7 @@ a.alto-contraste:before {
 
 .aumentar:before {
 	font-family: "Font Awesome 5 Free";
-	content: "\f031\f068";
+	content: "\f031\f067";
 	display: inline-block;
 	padding-right: 3px;
 	vertical-align: middle;
@@ -65,7 +65,7 @@ a.alto-contraste:before {
 }
 
 .body-container {
-	margin-top: 120px;
+	margin-top: 160px;
 }
 
 
@@ -127,7 +127,8 @@ button.altoContraste:hover {
 	color: #17252A;
 	border: 2px solid #17252A;
 	border-radius: 2px;
-	height: 300px;
+	min-height: 300px;
+	max-height: 600px;
 }
 
 .centerText {
