@@ -7,19 +7,21 @@ function gerarDadosEstaticos() {
     var taxaMortalidade = ((obitos/casosConfirmados)*100).toFixed(2);
     var taxaRecuperados = ((recuperados/casosConfirmados)*100).toFixed(2);
 
+    
+    $('.bandeira h3').html(bandeira);
+    
     var dados = '<div class="nomeCidade"><h2>' + nomeCidade + '</h2></div>' +
-                '<div class="bandeira"><h3>Bandeira ' + bandeira + '</h3></div>' + 
-                '<div class="leftText">' +
-                    '<p>Casos confirmados: ' + casosConfirmados + '</p>' +
-                    '<p>Óbitos: ' + obitos + '</p>' +
-                    '<p>Recuperados: ' + recuperados + '</p>' +
-                    '<p>Taxa de mortalidade: ' + taxaMortalidade + '%</p>' +
-                    '<p>Taxa de recuperados: ' + taxaRecuperados + '%</p>' +
-                '</div>'
-
+    '<div class="bandeira"><h3>Bandeira ' + bandeira + '</h3></div>' + 
+    '<div class="leftText dados">' +
+    '<p>Casos confirmados: ' + casosConfirmados + '</p>' +
+    '<p>Óbitos: ' + obitos + '</p>' +
+    '<p>Recuperados: ' + recuperados + '</p>' +
+    '<p>Taxa de mortalidade: ' + taxaMortalidade + '%</p>' +
+    '<p>Taxa de recuperados: ' + taxaRecuperados + '%</p>' +
+    '</div>'
+    
     if (nomeCidade) {
-        $('#resultado-consulta div').remove();
-        $('#resultado-consulta').append(dados);
+        $('.nomeCidade').append('h2', nomeCidade);
     } else {
         alert('Informe uma cidade!');
     }

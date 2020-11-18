@@ -12,7 +12,7 @@ var header_content = `
             <a class="aumentar" href="#" accesskey="8" title="Aumentar fonte">Aumentar fonte [8]</a>
         </li>
         <li class="ialto-contraste list-group-item bg-transparent border-0">
-            <a class="alto-contraste" href="#" accesskey="9" title="Alto contraste" onclick=altoContraste()>Alto contraste[9]</a>
+            <a class="alto-contraste" href="#" accesskey="9" title="Alto contraste">Alto contraste[9]</a>
         </li>
     </ul>
 </div>
@@ -20,10 +20,10 @@ var header_content = `
 </div>
 <nav class="navbar navbar-expand-md fixed-top navegacao">
 <a class="navbar-brand resizable" id="consulta-covid" href="#">CONSULTA COVID-19</a>
-<div class="d-flex ml-auto">
-    <div class="p-2"><a class="resizable" href="index.html">INICIO</a></div>
-    <div class="p-2"><a class="resizable" href="sobre.html">SOBRE</a></div>
-    <div class="p-2"><a class="resizable" href="contato.html">CONTATO</a></div>
+<div class="d-flex ml-auto pages">
+    <div class="p-2"><a href="index.html">INICIO</a></div>
+    <div class="p-2"><a href="sobre.html">SOBRE</a></div>
+    <div class="p-2"><a href="contato.html">CONTATO</a></div>
 </div>
 </nav>`; 
 
