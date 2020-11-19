@@ -21,7 +21,13 @@ function gerarDadosEstaticos() {
     '</div>'
     
     if (nomeCidade) {
-        $('.nomeCidade').append('h2', nomeCidade);
+        $('.nomeCidade h2').text(nomeCidade);
+        $('.bandeira h3').text(bandeira);
+        $('#casos-confirmados').text('Casos confirmados: ' + casosConfirmados);
+        $('#obitos').text('Óbitos: ' + obitos);
+        $('#recuperados').text('Recuperados: ' + recuperados);
+        $('#taxa-mortalidade').text('Taxa de mortalidade: ' + taxaMortalidade + '%');
+        $('#taxa-recuperados').text('Taxa de recuperados: ' + taxaRecuperados + '%');
     } else {
         alert('Informe uma cidade!');
     }

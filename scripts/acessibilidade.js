@@ -4,30 +4,38 @@ $(document).ready(function() {
     var selectorDados = '.dados p';
     var selectorBrand = '#consulta-covid';
     var selectorPages = '.pages a';
+    debugger;
+    var normalNomeCidade = $(selectorNomeCidade).css('font-size');
+    var normalBandeira = $(selectorBandeira).css('font-size');
+    var normalDados = $(selectorDados).css('font-size');
+    var normalBrand = $(selectorBrand).css('font-size');
+    var normalPages = $(selectorPages).css('font-size');
     
     $(".normal").click(function() {
-        debugger;
         $(selectorNomeCidade).css('font-size', normalNomeCidade);
         $(selectorBandeira).css('font-size', normalBandeira);
         $(selectorDados).css('font-size', normalDados);
+        $(selectorBrand).css('font-size', normalBrand);
+        $(selectorPages).css('font-size', normalPages);
     });
   
     $(".aumentar").click(function() {
-        var originalFont = parseFloat($(selectorNomeCidade).css('font-size'), 10);
-        if (originalFont < 20) {
-            $(selectorNomeCidade).css('font-size', originalFont * 1.2);
+        var fontP = parseInt($(selectorDados).css('font-size'));
+        var fontCidade = parseInt($(selectorNomeCidade).css('font-size'));
+        if (fontP < 22) {
+            $(selectorDados).css('font-size', fontP * 1.2);
+            $(selectorNomeCidade).css('font-size', fontCidade * 1.2);
         }
         return false;
     });
   
     
     $(".diminuir").click(function() {
-        debugger;
-        var originalFontSize = $(resize).css('font-size');
-        var originalFontNumber = parseFloat(originalFontSize, 10);
-        if (originalFontNumber > 12) {
-            var newFontSize = originalFontNumber * 0.8;
-            $(resize).css('font-size', newFontSize);
+        var fontP = parseInt($(selectorDados).css('font-size'));
+        var fontCidade = parseInt($(selectorNomeCidade).css('font-size'));
+        if (fontP > 10) {
+            $(selectorDados).css('font-size', fontP * 0.8);
+            $(selectorNomeCidade).css('font-size', fontCidade * 0.8);
         }
         return false;
     });
