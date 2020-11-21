@@ -1,5 +1,5 @@
 var header_content = `
-<div id="barra-auxiliar" class="container-fluid fixed-top">
+<div id="barra-auxiliar" class="container-fluid fixed-top backgroundVerde">
 <div class="d-flex justify-content-end acessibilidade">
     <ul class="list-group list-group-horizontal bg-transparent">
         <li class="idiminuir list-group-item bg-transparent border-0">

@@ -5,13 +5,13 @@ $(document).ready(function() {
     var normalP = $('p').css('font-size');
     var normalH1 = $('h1').css('font-size');
     var normalH2 = $('h2').css('font-size');
-    var normalLi = $('li').css('font-size');
+    var normalLi = $('.container-sobre li').css('font-size');
     
     $(".normal").click(function() {
         $('p').css('font-size', normalP);
         $('h1').css('font-size', normalH1);
         $('h2').css('font-size', normalH2);
-        $('li').css('font-size', normalLi);
+        $('.container-sobre li').css('font-size', normalLi);
         
     });
   
@@ -24,7 +24,7 @@ $(document).ready(function() {
             $('p').css('font-size', fontP * 1.2);
             $('h1').css('font-size', fontH1 * 1.2);
             $('h2').css('font-size', fontH2 * 1.2);
-            $('li').css('font-size', fontLi * 1.2);
+            $('.container-sobre li').css('font-size', fontLi * 1.2);
         }
         return false;
     });
@@ -34,12 +34,12 @@ $(document).ready(function() {
         var fontP = parseInt($('p').css('font-size'));
         var fontH1 = parseInt($('h1').css('font-size'));
         var fontH2 = parseInt($('h2').css('font-size'));
-        var fontLi = parseInt($('li').css('font-size'));
+        var fontLi = parseInt($('.container-sobre li').css('font-size'));
         if (fontP < 22) {
             $('p').css('font-size', fontP * 0.8);
             $('h1').css('font-size', fontH1 * 0.8);
             $('h2').css('font-size', fontH2 * 0.8);
-            $('li').css('font-size', fontLi * 0.8);
+            $('.container-sobre li').css('font-size', fontLi * 0.8);
         }
         return false;
     });
@@ -56,9 +56,10 @@ $(document).ready(function() {
             });
             $('#header').css('border', '2px solid white');
             $('.acessibilidade a').css('color', '#FFF');
-            
             $('.container-sobre').removeClass('formPadrao');
             $('.container-sobre').addClass('altoContraste');
+            $('#barra-auxiliar').removeClass('backgroundVerde');
+            $('#barra-auxiliar').addClass('altoContraste');
             
         } else {
             $('body').css('background-color', 'rgb(58, 175, 169)');
@@ -72,6 +73,8 @@ $(document).ready(function() {
             
             $('.container-sobre').addClass('formPadrao');
             $('.container-sobre').removeClass('altoContraste');
+            $('#barra-auxiliar').removeClass('altoContraste');
+            $('#barra-auxiliar').addClass('backgroundVerde');
         }
         return false;
     });
