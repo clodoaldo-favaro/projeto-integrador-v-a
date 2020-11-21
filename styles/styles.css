@@ -1,6 +1,6 @@
 body {
     background-color: #3AAFA9;
-    font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 .formPadrao, .formPadrao:focus {
@@ -178,6 +178,24 @@ button.altoContraste:hover {
 	margin-bottom: 10px;
 }
 
+.container-sobre {
+	width: 50%;
+	padding: 50px !important;
+	line-height: 1.5;
+	font-size: 1.1rem;
+	margin-top: 150px !important;
+}
 
+.container-sobre p {
+	margin-bottom: 10px;
+}
+
+.container-sobre h1 {
+	font-size:  2rem;
+}
+
+.container-sobre h2 {
+	font-size:  1.5rem;
+}
  
  
