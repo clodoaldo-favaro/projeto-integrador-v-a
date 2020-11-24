@@ -3,7 +3,32 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-.formPadrao, .formPadrao:focus {
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #7AFDCA inset;
+}
+
+input:-webkit-autofill.altoContraste,
+input:-webkit-autofill:hover.altoContraste, 
+input:-webkit-autofill:focus.altoContraste, 
+input:-webkit-autofill:active.altoContraste {
+	-webkit-box-shadow: 0 0 0 30px #000 inset;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+    -webkit-text-fill-color: #17252A;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill.altoContraste {
+    -webkit-text-fill-color: #FFF;
+}
+
+.formPadrao, .formPadrao:focus, .formPadrao::selection {
 	background-color: #7AFDCA;
 	color: #17252A;
 	border: 2px solid #17252A;
