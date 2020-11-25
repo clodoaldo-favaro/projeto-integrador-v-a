@@ -194,7 +194,8 @@ button.altoContraste:hover {
 }
 
 .container-contato {
-	width: 30%;
+	padding: 20px;
+	min-height: 500px;
 
 }
 
@@ -232,6 +233,18 @@ button.altoContraste:hover {
 
 .container-sobre h2 {
 	font-size:  1.5rem;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+#mensagem {
+	resize: none;
+}
+
+.bold {
+	font-weight: bold;
 }
  
  
