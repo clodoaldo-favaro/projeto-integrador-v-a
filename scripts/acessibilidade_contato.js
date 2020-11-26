@@ -61,6 +61,24 @@ $(document).ready(function() {
             $('#barra-auxiliar').removeClass('backgroundVerde');
             $('#barra-auxiliar').addClass('altoContraste');
             
+            $('#nome').removeClass('formPadrao');
+            $('#nome').addClass('altoContraste');
+            $('#nome').removeClass('placeholderNormal');
+            $('#nome').addClass('placeholderAltoContraste');
+
+            $('#email').removeClass('formPadrao');
+            $('#email').addClass('altoContraste');
+            $('#email').removeClass('placeholderNormal');
+            $('#email').addClass('placeholderAltoContraste');
+
+            $('#mensagem').removeClass('formPadrao');
+            $('#mensagem').addClass('altoContraste');
+            $('#mensagem').addClass('center');
+
+            $('#botao-enviar-mensagem').removeClass('formPadrao');
+            $('#botao-enviar-mensagem').removeClass('buttonPadrao');
+            $('#botao-enviar-mensagem').addClass('altoContraste');
+            
         } else {
             $('body').css('background-color', 'rgb(58, 175, 169)');
             $('.navegacao').css({
@@ -75,6 +93,24 @@ $(document).ready(function() {
             $('.container-contato').removeClass('altoContraste');
             $('#barra-auxiliar').removeClass('altoContraste');
             $('#barra-auxiliar').addClass('backgroundVerde');
+
+            $('#nome').addClass('formPadrao');
+            $('#nome').removeClass('altoContraste');
+            $('#nome').addClass('placeholderNormal');
+            $('#nome').removeClass('placeholderAltoContraste');
+
+            $('#email').addClass('formPadrao');
+            $('#email').removeClass('altoContraste');
+            $('#email').addClass('placeholderNormal');
+            $('#email').removeClass('placeholderAltoContraste');
+
+            $('#mensagem').addClass('formPadrao');
+            $('#mensagem').removeClass('altoContraste');
+            $('#mensagem').removeClass('center');
+
+            $('#botao-enviar-mensagem').addClass('formPadrao');
+            $('#botao-enviar-mensagem').addClass('buttonPadrao');
+            $('#botao-enviar-mensagem').removeClass('altoContraste');
         }
         return false;
     });
