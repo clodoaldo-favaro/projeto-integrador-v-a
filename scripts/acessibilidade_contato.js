@@ -1,45 +1,37 @@
 $(document).ready(function() {
-    var selectorTexto = '';
-    
-    debugger;
-    var normalP = $('p').css('font-size');
     var normalH1 = $('h1').css('font-size');
     var normalH2 = $('h2').css('font-size');
-    var normalLi = $('.container-sobre li').css('font-size');
+    var normalInput = $('input[type="text"], input[type="email"]').css('font-size');
     
-    $(".normal").click(function() {
-        $('p').css('font-size', normalP);
-        $('h1').css('font-size', normalH1);
-        $('h2').css('font-size', normalH2);
-        $('.container-sobre li').css('font-size', normalLi);
+    $(".normal").on('click', function() {
+        debugger;
+        $('input[type="text"], input[type="email"], textarea').css('font-size', normalInput);
+        
         
     });
   
-    $(".aumentar").click(function() {
-        var fontP = parseInt($('p').css('font-size'));
+    $(".aumentar").on('click', function() {
+        debugger;
         var fontH1 = parseInt($('h1').css('font-size'));
         var fontH2 = parseInt($('h2').css('font-size'));
-        var fontLi = parseInt($('li').css('font-size'));
-        if (fontP < 22) {
-            $('p').css('font-size', fontP * 1.2);
+        var fontInput = parseInt($('input[type="text"], input[type="email"]').css('font-size'));
+        if (fontInput < 22) {
             $('h1').css('font-size', fontH1 * 1.2);
             $('h2').css('font-size', fontH2 * 1.2);
-            $('.container-sobre li').css('font-size', fontLi * 1.2);
+            $('input[type="text"], input[type="email"], textarea').css('font-size', fontInput * 1.2);
         }
         return false;
     });
   
     
-    $(".diminuir").click(function() {
-        var fontP = parseInt($('p').css('font-size'));
+    $(".diminuir").on('click', function() {
         var fontH1 = parseInt($('h1').css('font-size'));
         var fontH2 = parseInt($('h2').css('font-size'));
-        var fontLi = parseInt($('.container-sobre li').css('font-size'));
-        if (fontP < 22) {
-            $('p').css('font-size', fontP * 0.8);
+        var fontInput = parseInt($('input[type="text"], input[type="email"], textarea').css('font-size'));
+        if (fontInput > 12) {
             $('h1').css('font-size', fontH1 * 0.8);
             $('h2').css('font-size', fontH2 * 0.8);
-            $('.container-sobre li').css('font-size', fontLi * 0.8);
+            $('input[type="text"], input[type="email"], textarea').css('font-size', fontInput * 0.8);
         }
         return false;
     });
@@ -116,4 +108,19 @@ $(document).ready(function() {
     });
   
 });
+
+
+
+//JQuery
+$('#button1').click(function() { 
+    alert("teste"); 
+}); 
+
+//Javascript puro
+document.getElementById("button1").addEventListener('click', function(){  
+    alert("teste"); 
+}); 
+
+
+
 
