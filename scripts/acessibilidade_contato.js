@@ -2,16 +2,12 @@ $(document).ready(function() {
     var normalH1 = $('h1').css('font-size');
     var normalH2 = $('h2').css('font-size');
     var normalInput = $('input[type="text"], input[type="email"]').css('font-size');
-    
-    $(".normal").on('click', function() {
-        debugger;
+
+    function normalFont() {
         $('input[type="text"], input[type="email"], textarea').css('font-size', normalInput);
-        
-        
-    });
-  
-    $(".aumentar").on('click', function() {
-        debugger;
+    }
+
+    function biggerFont() {
         var fontH1 = parseInt($('h1').css('font-size'));
         var fontH2 = parseInt($('h2').css('font-size'));
         var fontInput = parseInt($('input[type="text"], input[type="email"]').css('font-size'));
@@ -21,10 +17,9 @@ $(document).ready(function() {
             $('input[type="text"], input[type="email"], textarea').css('font-size', fontInput * 1.2);
         }
         return false;
-    });
-  
-    
-    $(".diminuir").on('click', function() {
+    }
+
+    function smallerFont() {
         var fontH1 = parseInt($('h1').css('font-size'));
         var fontH2 = parseInt($('h2').css('font-size'));
         var fontInput = parseInt($('input[type="text"], input[type="email"], textarea').css('font-size'));
@@ -34,9 +29,9 @@ $(document).ready(function() {
             $('input[type="text"], input[type="email"], textarea').css('font-size', fontInput * 0.8);
         }
         return false;
-    });
+    }
 
-    $(".alto-contraste").click(function() {
+    function altoContraste() {
         var color = $('body').css('background-color');
     
         if (color == 'rgb(58, 175, 169)') {
@@ -105,22 +100,36 @@ $(document).ready(function() {
             $('#botao-enviar-mensagem').removeClass('altoContraste');
         }
         return false;
-    });
+    }
+    
+    $(".normal").on('click', normalFont);
+    $(".aumentar").on('click', biggerFont);
+    $(".diminuir").on('click', smallerFont);
+    $(".alto-contraste").click(altoContraste);
+
+    this.bind('keypress', function(e) {
+        debugger;
+        if (e.altKey) {
+            var key = String.fromCharCode(e.which);
+            switch (key) {
+                case 6: 
+                    smallerFont();
+                    break;
+                case 7:
+                    normalFont();
+                    break;
+                case 8:
+                    biggerFont();
+                    break;
+                case 9:
+                    altoContraste();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    );
   
 });
-
-
-
-//JQuery
-$('#button1').click(function() { 
-    alert("teste"); 
-}); 
-
-//Javascript puro
-document.getElementById("button1").addEventListener('click', function(){  
-    alert("teste"); 
-}); 
-
-
-
 

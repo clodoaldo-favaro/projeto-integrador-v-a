@@ -4,7 +4,7 @@ $(document).ready(function() {
     var selectorDados = '.dados p';
     var selectorBrand = '#consulta-covid';
     var selectorPages = '.pages a';
-    debugger;
+    
     var normalNomeCidade = $(selectorNomeCidade).css('font-size');
     var normalBandeira = $(selectorBandeira).css('font-size');
     var normalDados = $(selectorDados).css('font-size');
