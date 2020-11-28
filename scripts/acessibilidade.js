@@ -10,16 +10,16 @@ $(document).ready(function() {
     var normalDados = $(selectorDados).css('font-size');
     var normalBrand = $(selectorBrand).css('font-size');
     var normalPages = $(selectorPages).css('font-size');
-    
-    $(".normal").click(function() {
+
+    function normalFont() {
         $(selectorNomeCidade).css('font-size', normalNomeCidade);
         $(selectorBandeira).css('font-size', normalBandeira);
         $(selectorDados).css('font-size', normalDados);
         $(selectorBrand).css('font-size', normalBrand);
         $(selectorPages).css('font-size', normalPages);
-    });
-  
-    $(".aumentar").click(function() {
+    }
+
+    function biggerFont() {
         var fontP = parseInt($(selectorDados).css('font-size'));
         var fontCidade = parseInt($(selectorNomeCidade).css('font-size'));
         if (fontP < 22) {
@@ -27,10 +27,9 @@ $(document).ready(function() {
             $(selectorNomeCidade).css('font-size', fontCidade * 1.2);
         }
         return false;
-    });
-  
-    
-    $(".diminuir").click(function() {
+    }
+
+    function smallerFont() {
         var fontP = parseInt($(selectorDados).css('font-size'));
         var fontCidade = parseInt($(selectorNomeCidade).css('font-size'));
         if (fontP > 10) {
@@ -38,9 +37,9 @@ $(document).ready(function() {
             $(selectorNomeCidade).css('font-size', fontCidade * 0.8);
         }
         return false;
-    });
+    }
 
-    $(".alto-contraste").click(function() {
+    function altoContraste() {
         var color = $('body').css('background-color');
     
         if (color == 'rgb(58, 175, 169)') {
@@ -92,7 +91,35 @@ $(document).ready(function() {
             $('#barra-auxiliar').addClass('backgroundVerde');
         }
         return false;
-    });
-  
+    }
+    
+    $(".normal").on('click', normalFont);
+    $(".aumentar").on('click', biggerFont);
+    $(".diminuir").on('click',smallerFont);
+    $(".alto-contraste").on('click', altoContraste);
+
+    this.bind('keypress', function(e) {
+        debugger;
+        if (e.altKey) {
+            var key = String.fromCharCode(e.which);
+            switch (key) {
+                case 6: 
+                    smallerFont();
+                    break;
+                case 7:
+                    normalFont();
+                    break;
+                case 8:
+                    biggerFont();
+                    break;
+                case 9:
+                    altoContraste();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    );
 });
 
