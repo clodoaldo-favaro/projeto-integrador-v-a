@@ -21,9 +21,9 @@ var header_content = `
 <nav class="navbar navbar-expand-md fixed-top navegacao">
 <a class="navbar-brand resizable" id="consulta-covid" href="#">CONSULTA COVID-19</a>
 <div class="d-flex ml-auto pages">
-    <div class="p-2"><a href="index.html">INICIO</a></div>
-    <div class="p-2"><a href="sobre.html">SOBRE</a></div>
-    <div class="p-2"><a href="contato.html">CONTATO</a></div>
+    <div class="p-2"><a href="index.php">INICIO</a></div>
+    <div class="p-2"><a href="sobre.php">SOBRE</a></div>
+    <div class="p-2"><a href="contato.php">CONTATO</a></div>
 </div>
 </nav>`; 
 
