@@ -38,6 +38,15 @@ input:-webkit-autofill.altoContraste {
 	z-index: 2;
 }
 
+#consulta-cidade {
+	width: 80%;
+}
+
+#data-consulta {
+	width: 20%;
+	height: 45px;
+}
+
 .backgroundVerde {
 	background-color: #3AAFA9;
 }

@@ -17,7 +17,8 @@
     <div class="container body-container">
         <form action="" method="get">
             <div class="row justify-content-md-center">
-                <input class="form-control placeholderNormal consultaCidade formPadrao" type="text" id="consulta-cidade" name="consulta-cidade" placeholder="Digite o nome da cidade">
+                <input class="d-inline-flex form-control placeholderNormal consultaCidade formPadrao" type="text" id="consulta-cidade" name="consulta-cidade" placeholder="Digite o nome da cidade">
+                <input class="d-inline-flex form-control formPadrao" type="date" name="data-consulta" id="data-consulta" style="display: inline-block;">
             </div>
             <div class="row justify-content-md-center button-container">
                 <button type="button" id="botao-consulta" class="buttonPadrao formPadrao" onclick="gerarDadosEstaticos()">CONSULTAR</button>
