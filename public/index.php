@@ -21,7 +21,7 @@
                 <input class="d-inline-flex form-control formPadrao" type="date" name="data-consulta" id="data-consulta" style="display: inline-block;">
             </div>
             <div class="row justify-content-md-center button-container">
-                <button type="button" id="botao-consulta" class="buttonPadrao formPadrao" onclick="gerarDadosEstaticos()">CONSULTAR</button>
+                <button type="button" id="botao-consulta" class="buttonPadrao formPadrao">CONSULTAR</button>
             </div>
             <div class="row justify-content-md-end">
                 <div class="col-3">

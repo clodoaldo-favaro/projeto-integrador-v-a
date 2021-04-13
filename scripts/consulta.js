@@ -1,3 +1,31 @@
+$(document).ready(
+    $('#botao-consulta').on('click', function(){
+        var res = validarDadosInformados();
+        
+        if (!res['erros']) {
+            gerarDadosEstaticos();
+        } else {
+            mostrarErros(res['erros']);
+        }
+    })
+);
+
+
+function validarDadosInformados() {
+    //TODO Tratar os dados de entrada e montar um array no formato abaixo
+    //res['erros'][0]['mensagem'] = 'Cidade não informada'
+    //res['erros'][1]['mensagem'] = 'Data não informada'
+    //res['erros'][1]['mensagem'] = 'Data inválida'
+    var res = [];
+
+    debugger;
+    return res;
+}
+
+function mostrarErros(erros) {
+    //TODO
+}
+
 function gerarDadosEstaticos() {
     var nomeCidade = $('#consulta-cidade').val();
     var bandeira = 'Laranja';
