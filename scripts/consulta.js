@@ -1,7 +1,7 @@
 $(document).ready(
     $('#botao-consulta').on('click', function(){
         var res = validarDadosInformados();
-        debugger;
+        
         if (!res['erros']) {
             //gerarDadosEstaticos();
             $.ajax({
@@ -9,12 +9,12 @@ $(document).ready(
                 type: 'POST',
                 data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaCidade'},
                 success: function(data) {
-                    debugger;
                     console.log(data); // Inspect this in your console
                 }
             }).done(function(response) {
+                let jsonData = JSON.parse(response);
                 debugger;
-                console.log(data); // Inspect this in your console
+                console.log(jsonData); // Inspect this in your console
             }
             );
         } else {
@@ -30,7 +30,7 @@ function validarDadosInformados() {
     var erros = [];
     var nomeCidade = $('#consulta-cidade').val();
     var dataConsulta = $('#data-consulta').val();
-    debugger;
+    
     if (!nomeCidade) {
         erros.push('Cidade não informada.');
     }
@@ -43,7 +43,6 @@ function validarDadosInformados() {
         res['erros'] = erros;
     }
 
-    debugger;
     return res;
 }
 
