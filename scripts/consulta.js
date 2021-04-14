@@ -3,7 +3,20 @@ $(document).ready(
         var res = validarDadosInformados();
         debugger;
         if (!res['erros']) {
-            gerarDadosEstaticos();
+            //gerarDadosEstaticos();
+            $.ajax({
+                url: '../backend/funcoes.php',
+                type: 'POST',
+                data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaCidade'},
+                success: function(data) {
+                    debugger;
+                    console.log(data); // Inspect this in your console
+                }
+            }).done(function(response) {
+                debugger;
+                console.log(data); // Inspect this in your console
+            }
+            );
         } else {
             mostrarErros(res['erros']);
         }
@@ -12,9 +25,6 @@ $(document).ready(
 
 
 function validarDadosInformados() {
-    //TODO Tratar os dados de entrada e montar um array no formato abaixo
-    //res['erros'][0]['mensagem'] = 'Cidade não informada'
-    //res['erros'][1]['mensagem'] = 'Data não informada'
     //res['erros'][1]['mensagem'] = 'Data inválida'
     var res = [];
     var erros = [];

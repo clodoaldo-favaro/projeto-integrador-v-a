@@ -98,7 +98,7 @@ $(document).ready(function() {
     $(".diminuir").on('click',smallerFont);
     $(".alto-contraste").on('click', altoContraste);
 
-    this.bind('keypress', function(e) {
+    this.on('keypress', function(e) {
         debugger;
         if (e.altKey) {
             var key = String.fromCharCode(e.which);
