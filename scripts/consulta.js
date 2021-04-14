@@ -14,7 +14,9 @@ $(document).ready(
             }).done(function(response) {
                 let jsonData = JSON.parse(response);
                 debugger;
-                console.log(jsonData); // Inspect this in your console
+                console.log(jsonData); 
+                //MONTAR A TELA COM OS RESULTADOS
+                //DÁ PARA USAR A gerarDadosEstatisticos, passando o jsonData como parâmetro
             }
             );
         } else {
