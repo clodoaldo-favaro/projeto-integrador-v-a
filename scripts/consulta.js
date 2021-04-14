@@ -1,7 +1,7 @@
 $(document).ready(
     $('#botao-consulta').on('click', function(){
         var res = validarDadosInformados();
-        
+        debugger;
         if (!res['erros']) {
             gerarDadosEstaticos();
         } else {
@@ -17,13 +17,32 @@ function validarDadosInformados() {
     //res['erros'][1]['mensagem'] = 'Data não informada'
     //res['erros'][1]['mensagem'] = 'Data inválida'
     var res = [];
+    var erros = [];
+    var nomeCidade = $('#consulta-cidade').val();
+    var dataConsulta = $('#data-consulta').val();
+    debugger;
+    if (!nomeCidade) {
+        erros.push('Cidade não informada.');
+    }
+
+    if (!dataConsulta) {
+        erros.push('Data não informada.');
+    }
+
+    if (erros.length) {
+        res['erros'] = erros;
+    }
 
     debugger;
     return res;
 }
 
 function mostrarErros(erros) {
-    //TODO
+    var msgErro = '';
+    erros.forEach(erro => {
+        msgErro += erro + '\n';
+    });
+    alert(msgErro);
 }
 
 function gerarDadosEstaticos() {
