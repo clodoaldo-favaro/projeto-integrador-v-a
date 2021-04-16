@@ -56,10 +56,21 @@ $(document).ready(function() {
             $('#consulta-cidade').addClass('altoContraste');
             $('#consulta-cidade').removeClass('placeholderNormal');
             $('#consulta-cidade').addClass('placeholderAltoContraste');
+
+            $('#data-consulta').removeClass('formPadrao');
+            $('#data-consulta').addClass('altoContraste');
+            $('#data-consulta').removeClass('placeholderNormal');
+            $('#data-consulta').addClass('placeholderAltoContraste');
             
             $('#botao-consulta').removeClass('formPadrao');
             $('#botao-consulta').removeClass('buttonPadrao');
             $('#botao-consulta').addClass('altoContraste');
+            $('#botao-consulta-10-mais').removeClass('formPadrao');
+            $('#botao-consulta-10-mais').removeClass('buttonPadrao');
+            $('#botao-consulta-10-mais').addClass('altoContraste');
+            $('#botao-consulta-brasil').removeClass('formPadrao');
+            $('#botao-consulta-brasil').removeClass('buttonPadrao');
+            $('#botao-consulta-brasil').addClass('altoContraste');
 
             $('#resultado-consulta').removeClass('formPadrao');
             $('#resultado-consulta').addClass('altoContraste');
@@ -80,10 +91,21 @@ $(document).ready(function() {
             $('#consulta-cidade').addClass('formPadrao');
             $('#consulta-cidade').removeClass('placeholderAltoContraste');
             $('#consulta-cidade').addClass('placeholderNormal');
-            
+
+            $('#data-consulta').removeClass('altoContraste');
+            $('#data-consulta').addClass('formPadrao');
+            $('#data-consulta').removeClass('placeholderAltoContraste');
+            $('#data-consulta').addClass('placeholderNormal');
+
             $('#botao-consulta').removeClass('altoContraste');
             $('#botao-consulta').addClass('formPadrao');
             $('#botao-consulta').addClass('buttonPadrao');
+            $('#botao-consulta-10-mais').removeClass('altoContraste');
+            $('#botao-consulta-10-mais').addClass('formPadrao');
+            $('#botao-consulta-10-mais').addClass('buttonPadrao');
+            $('#botao-consulta-brasil').removeClass('altoContraste');
+            $('#botao-consulta-brasil').addClass('formPadrao');
+            $('#botao-consulta-brasil').addClass('buttonPadrao');
 
             $('#resultado-consulta').removeClass('altoContraste');
             $('#resultado-consulta').addClass('formPadrao');

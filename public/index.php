@@ -26,8 +26,10 @@
             </div>
             <div class="row justify-content-center button-container">
                 <button type="button" id="botao-consulta" class="buttonPadrao formPadrao">CONSULTAR</button>
+                <button type="button" id="botao-consulta-10-mais" class="buttonPadrao formPadrao">10+</button>
+                <button type="button" id="botao-consulta-brasil" class="buttonPadrao formPadrao">BRASIL</button>
             </div>
-            <div class="row justify-content-md-end">
+            <div class="row">
                 <div class="col-3">
                     <img src="../images/covid-19-cartoon-icon-by-Vexels.svg" alt="Desenho cartunizado do vírus COVID-19" class="flip-horizontal cartoon-covid" style="float: right;">
                 </div>
