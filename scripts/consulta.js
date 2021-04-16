@@ -46,6 +46,7 @@ function validarCidadeInformada(nomeCidade) {
     var format = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     if (!nomeCidade) {
         erros.push('Cidade não informada.');
+        return erros;
     }
 
     if (!isNaN(nomeCidade)) {
