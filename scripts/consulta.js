@@ -51,6 +51,28 @@ $(document).ready(
         } else {
             mostrarErros(res['erros']);
         }
+    }),
+
+    $('#botao-consulta-brasil').on('click', function() {
+        $.ajax({
+            url: '../backend/funcoes.php',
+            type: 'POST',
+            data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaBrasil'},
+            success: function(data) {
+                debugger;
+                console.log(data); 
+            }
+        }).done(function(response) {
+            debugger;
+            if (!response['erros']) {
+                montarResultadoBrasil(response);
+                mostrarResultado(response);
+            } else {
+                mostrarErros(response['erros']);
+            }
+        }
+        );
+         
     })
 );
 
@@ -194,7 +216,24 @@ function montarResultadoDezMais(data) {
 }
 
 function montarResultadoBrasil(data) {
+    debugger;
+    var casos = data['casos'];
+    var mortos = data['mortos'];
+    var recuperados = data['recuperados'];
+
+    var taxaMortalidade = ((mortos/casos)*100).toFixed(2);
+    var taxaRecuperacao = ((recuperados/casos)*100).toFixed(2);
     
+    $('#resultado-sucesso').append(
+        $('<h2>', {'text': 'Dados do COVID no Brasil'}),
+        $('<ul>').append(
+            $('<li>', {'text': 'Casos: ' + casos}),
+            $('<li>', {'text': 'Mortos: ' + mortos}),
+            $('<li>', {'text': 'Recuperados: ' + recuperados}),
+            $('<li>', {'text': 'Taxa de mortalidade: ' + taxaMortalidade + '%'}),
+            $('<li>', {'text': 'Taxa de recuperação: ' + taxaRecuperacao + '%'})
+        )
+    );
 }
 
 function mostrarResultado() {

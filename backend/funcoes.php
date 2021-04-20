@@ -49,6 +49,9 @@ function consultaCidade() {
 
 function consultaDezMais() {
     $dataConsulta = $_POST['dataConsulta'];
+    //TODO implementar a consulta ao banco de dados
+    
+
     $cidades = [
         [
             'nome' => 'Porto Alegre', 
@@ -90,7 +93,17 @@ function consultaDezMais() {
 }
 
 function consultaBrasil() {
-
+    //TODO implementar a consulta ao banco de dados
+    
+    $res = [
+        'casos' => 13900000,
+        'recuperados' => 12300000,
+        'mortos' => 373000
+    ];
+    
+    header('Content-Type: application/json');
+    echo json_encode($res);
+    exit;
 }
 
 

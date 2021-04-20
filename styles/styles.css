@@ -231,6 +231,10 @@ table.table-10, .table-10 td, .table-10 th {
 	border-radius: 2px;
 }
 
+#resultado-sucesso h2 {
+	font-size: 2rem;
+}
+
 .nomeCidade {
 	font-size: 2rem;
 }
