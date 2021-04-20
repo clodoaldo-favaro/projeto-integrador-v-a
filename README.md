@@ -5,7 +5,7 @@ disciplina Projeto Integrador IVB, do curso Análise e Desenvolvimento de Sistem
 da Universidade de Caxias do Sul, segundo trimestre de 2020. 
 
 # Autores
-Clodoaldo Ivan Favaro Sobrinho
-Daniel Grotto
-Rafael Nordio
-Ricieri Augusto Foscarini Spardelotti
+* Clodoaldo Ivan Favaro Sobrinho
+* Daniel Grotto
+* Rafael Nordio
+* Ricieri Augusto Foscarini Spardelotti
