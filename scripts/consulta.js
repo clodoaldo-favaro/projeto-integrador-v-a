@@ -99,7 +99,7 @@ function validarCidadeInformada(nomeCidade) {
         //return res;
     //}
 
-    if (!isNaN(nomeCidade)) {
+    if (nomeCidade && !isNaN(nomeCidade)) {
         res['erros'].push('O nome da cidade não pode ser um número.')
     }
 

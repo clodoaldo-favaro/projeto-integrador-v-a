@@ -42,7 +42,7 @@ input:-webkit-autofill.altoContraste {
     -webkit-text-fill-color: #FFF;
 }
 
-input, button {
+input, button, .resultadoConsulta {
 	font-size: var(--font-size--default) !important;
 }
 
