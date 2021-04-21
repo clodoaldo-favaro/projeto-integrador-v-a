@@ -1,6 +1,6 @@
 <?php
 
-
+require_once('conexao.php');
 
 if (isset($_POST['action'])) {
     $funcao = $_POST['action'];
@@ -16,85 +16,84 @@ if (isset($_POST['action'])) {
     
 }
 
-
 function consultaCidade() {
     $nomeCidade = $_POST['nomeCidade'];
-    $dataConsulta = $_POST['dataConsulta'];
+    $dataConsulta = $_POST['dataConsulta'];    
+       
+    $PDO = conecta_bd();
+    $sql = "SELECT casos, recuperados, mortos, bandeiraAtual 
+            FROM casos as a 
+            WHERE a.idCidade in (SELECT id 
+                                FROM cidades 
+                                WHERE nome = :nomeCidade)
+            and a.data= :dataConsulta";
 
-    //TODO: Consultar banco de dados e substituir os dados do retorno pelo que veio do campo
-    //Se ocorrerem erros, colocar dentro do jsonRetorno uma chave 'erros' com um array das mensagens de erro,
-    //exemplo: 
-    /*
+    $stmt = $PDO->prepare($sql);
+    $stmt->bindParam(':nomeCidade', $nomeCidade);
+    $stmt->bindParam(':dataConsulta', $dataConsulta);
+    $stmt->execute();
+
+    $registro = $stmt->fetch();
+    if ($stmt->rowCount()) {
         $jsonRetorno = [
-            'erros' = [
-                'Não foi possível conectar com o banco de dados',
-                'Não foram encontradas informações para a cidade informada no período selecionado'
-            ]
-        ]
-    */
-
-    $jsonRetorno = [
-        'nomeCidade' => $nomeCidade,
-        'dataConsulta' => $dataConsulta,
-        'casosConfirmados' => 3386,
-        'qtdeRecuperados' => 3112,
-        'qtdeObitos' => 109,
-        'bandeira' => 'Laranja'
-    ];
+            'nomeCidade' => $nomeCidade,
+            'dataConsulta' => $dataConsulta,
+            'casosConfirmados' => (int)$registro["casos"],
+            'qtdeRecuperados' => (int)$registro["recuperados"],
+            'qtdeObitos' => (int)$registro["mortos"],
+            'bandeira' => $registro["bandeiraAtual"]
+        ];
+    } else {
+        $jsonRetorno = ['erros' => ['Não foram localizados registros para a cidade e período informados']];
+    }
         
     header('Content-Type: application/json');
     echo json_encode($jsonRetorno);
     exit;
 }
 
-function consultaDezMais() {
-    $dataConsulta = $_POST['dataConsulta'];
-    //TODO implementar a consulta ao banco de dados
+function consultaDezMais() {       
+   $dataConsulta = $_POST['dataConsulta'];
+      
+   $PDO = conecta_bd();
+   $sql = "SELECT DISTINCT(casos) casos, recuperados, mortos, bandeiraAtual, 
+	            (SELECT c.nome 
+                  FROM cidades c 
+                  WHERE c.id = a.idCidade) cidade
+            FROM casos a
+            WHERE data=:dataConsulta 
+            ORDER BY a.casos DESC
+            LIMIT 10";
+
+    $stmt = $PDO->prepare($sql);
+    $stmt->bindParam(':dataConsulta', $dataConsulta);
+    $stmt->execute();
+    $cidades= [];
+
+    while ($resultado = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $cidades []= 
+            [
+            'nome' => $resultado['cidade'], 
+            'casos' => (int)$resultado['casos'], 
+            'recuperados' => (int)$resultado['recuperados'], 
+            'mortos' => (int)$resultado['mortos'], 
+            'bandeiraAtual' => $resultado['bandeiraAtual']
+            ];
+    }
     
-
-    $cidades = [
-        [
-            'nome' => 'Porto Alegre', 
-            'casos' => 3200, 
-            'recuperados' => 2950, 
-            'mortos' => 100, 
-            'bandeiraAtual' => 'Preta'
-
-        ],
-        [
-            'nome' => 'Caxias do Sul', 
-            'casos' => 2400, 
-            'recuperados' => 2370, 
-            'mortos' => 30, 
-            'bandeiraAtual' => 'Preta'
-
-        ],
-        [
-            'nome' => 'Bento Gonçalves', 
-            'casos' => 1000, 
-            'recuperados' => 990, 
-            'mortos' => 10, 
-            'bandeiraAtual' => 'Preta'
-
-        ], 
-        [
-            'nome' => 'Garibaldi', 
-            'casos' => 500, 
-            'recuperados' => 498, 
-            'mortos' => 2, 
-            'bandeiraAtual' => 'Vermelha'
-
-        ]
-    ];
+    $retorno = [];
+    if (empty($cidades)) {
+        $retorno['erros'] = ['Não foram localizados registros para o período informado.'];
+    } else {
+        $retorno = $cidades;
+    }
 
     header('Content-Type: application/json');
-    echo json_encode($cidades);
+    echo json_encode($retorno);
     exit;
 }
 
 function consultaBrasil() {
-    //TODO implementar a consulta ao banco de dados
-    
     $res = [
         'casos' => 13900000,
         'recuperados' => 12300000,
@@ -105,9 +104,4 @@ function consultaBrasil() {
     echo json_encode($res);
     exit;
 }
-
-
-
-
-
 ?>

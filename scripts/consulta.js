@@ -6,13 +6,8 @@ $(document).ready(
             $.ajax({
                 url: '../backend/funcoes.php',
                 type: 'POST',
-                data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaCidade'},
-                success: function(data) {
-                    debugger;
-                    console.log(data); 
-                }
+                data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaCidade'}
             }).done(function(response) {
-                debugger;
                 if (!response['erros']) {
                     montarResultadoConsultaCidade(response);
                     mostrarResultado();
@@ -33,11 +28,7 @@ $(document).ready(
             $.ajax({
                 url: '../backend/funcoes.php',
                 type: 'POST',
-                data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaDezMais'},
-                success: function(data) {
-                    debugger;
-                    console.log(data); 
-                }
+                data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaDezMais'}
             }).done(function(response) {
                 debugger;
                 if (!response['erros']) {
@@ -57,11 +48,7 @@ $(document).ready(
         $.ajax({
             url: '../backend/funcoes.php',
             type: 'POST',
-            data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaBrasil'},
-            success: function(data) {
-                debugger;
-                console.log(data); 
-            }
+            data: {nomeCidade:$('#consulta-cidade').val(), dataConsulta:$('#data-consulta').val(), action:'consultaBrasil'}
         }).done(function(response) {
             debugger;
             if (!response['erros']) {
@@ -111,7 +98,6 @@ function validarCidadeInformada(nomeCidade) {
 }
 
 function validarDataInformada(data) {
-    debugger;
     var res = {'erros': []};
     
     if (!data) {
@@ -196,7 +182,6 @@ function montarResultadoDezMais(data) {
     var tableBody = $('<tbody>');
 
     $.each(data, function(index, cidade) {
-        debugger;
         listaCidadesObj.push(
             $('<tr>').append(
                 $('<td>', {'text': cidade['nome']}),
@@ -216,7 +201,6 @@ function montarResultadoDezMais(data) {
 }
 
 function montarResultadoBrasil(data) {
-    debugger;
     var casos = data['casos'];
     var mortos = data['mortos'];
     var recuperados = data['recuperados'];
